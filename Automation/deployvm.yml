@@ -1,0 +1,23 @@
+---
+- hosts: localhost
+  vars:
+    sgname: webinstsg
+  tasks:
+  - name: example using security group rule descriptions
+    ec2_group:
+          aws_secret_key: "{{ mysecretkey }}"
+          aws_access_key: "{{ myaccesskey }}"
+          name: "{{ sgname }}"
+          description: sg with rule descriptions
+          vpc_id: "{{ vpcid }}"
+          region: "{{ region }}"
+          rules:
+           - proto: tcp
+             ports:
+               - 80
+               - 22
+             cidr_ip: 0.0.0.0/0
+             rule_desc: allow all on port 80 and 22
+    register: webinstsg_output
+  - debug:
+       var: webinstsg_output
