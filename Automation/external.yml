@@ -2,7 +2,5 @@
 vpcid: vpc-ead65892
 subnetid: subnet-0aa06057
 region: us-east-1
-myaccesskey: AKIAJ44ARUXJX6TVPVGA
-mysecretkey: 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
 instancetype: t2.micro
 myami: ami-0922553b7b0369273
